@@ -17,6 +17,7 @@ class Solution {
         
         for char in s.reversed() {
             let value = roman[String(char)] ?? 0
+            
             if value < previousValue {
                 result -= value
             } else {
@@ -31,3 +32,4 @@ class Solution {
 }
 
 Solution().romanToInt("MCMXIV")
+Solution().romanToInt("MMCMLXXXIX")
