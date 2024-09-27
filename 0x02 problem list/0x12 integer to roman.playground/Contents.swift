@@ -26,10 +26,8 @@ class Solution {
                 break
             }
 
-            print(num)
             let count = num / value
             num %= value
-            print(num)
             romanDigits.append(String(repeating: symbol, count: count))
         }
         
