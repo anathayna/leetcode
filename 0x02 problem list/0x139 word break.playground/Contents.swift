@@ -11,11 +11,11 @@ class Solution {
     
     private func dp(_ i: Int) -> Bool {
         if i < 0 { return true }
-        
+
         if memo[i] != -1 {
             return memo[i] == 1
         }
-        
+
         for word in wordDict {
             if i - word.count + 1 < 0 {
                 continue
@@ -37,7 +37,6 @@ class Solution {
     func wordBreak(_ s: String, _ wordDict: [String]) -> Bool {
         self.s = s
         self.wordDict = wordDict
-        self.memo
         self.memo = Array(repeating: -1, count: s.count)
         return dp(s.count-1)
     }
