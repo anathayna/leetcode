@@ -15,15 +15,26 @@ import Foundation
 
 */
 
-func missingValueSum(_ array: [Int]) -> Int? {
+func missingValueSum(_ array: [Int]) -> Int {
     guard let min = array.min(),
-          let max = array.max() else { return nil }
+          let max = array.max() else { return 0 }
     
     let soma = array.reduce(0, +)
     let total = (min+max)*(max-min+1)/2
     let result = total - soma
 
     return result
+}
+
+func missingValuesSum(_ list: [Int]) -> Int {
+    guard let min = list.min(),
+          let max = list.max() else { return 0 }
+    
+    let interval = Set(min...max)
+    let listNumbers = Set(list)
+    let missingValues = interval.subtracting(listNumbers)
+
+    return missingValues.reduce(0, +)
 }
 
 missingValueSum([1, 2, 5])
